@@ -81,7 +81,7 @@ for i in range(1, img.shape[0]-1):
         E_l -= B_l[:, i, j, :] * np.sum(np.multiply(np.swapaxes(B_l[:, i-1:i+2, j-1:j+2, :], 1, 3),\
             np.swapaxes(neighbourhood_matrix, 0, 1)), axis=(2, 3))
 
-E_l += img.shape[0] * img.shape[1] * np.sum(neighbourhood_matrix)
+E_l += (img.shape[0] - 2) * (img.shape[1] - 2) * np.sum(neighbourhood_matrix)
 
 exp_thresh = exposure_threshold(E_l)
 
