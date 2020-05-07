@@ -100,12 +100,44 @@ cv2.imwrite(args.output_file, new_img)
 
 if args.display_graphs:
     plt.figure(1)
-    for i in range(channels):
-        plt.plot(E_l[:, i])
-    plt.figure(2)
-    for i in range(channels):
-        plt.plot(E_l_clip[:, i])
-    plt.figure(3)
-    for i in range(channels):
-        plt.plot(tf[:, i])
+    if channels == 1:
+        plt.plot(E_l[:, 0], '#999999')
+        plt.xlabel('Pixel Value')
+        plt.ylabel('Energy')
+        plt.title('Input Image Energy Curve')
+        
+        plt.figure(2)
+        plt.plot(E_l_clip[:, 0], '#999999')
+        plt.xlabel('Pixel Value')
+        plt.ylabel('Energy')
+        plt.title('Clipped Energy Curve')
+        
+        plt.figure(3)
+        plt.plot(tf[:, 0], '#999999')
+        plt.xlabel('Input Pixel Value')
+        plt.ylabel('Output Pixel Value')
+        plt.title('Transfer Function')
+    if channels == 3:
+        plt.plot(E_l[:, 0], 'b')
+        plt.plot(E_l[:, 1], 'g')
+        plt.plot(E_l[:, 2], 'r')
+        plt.xlabel('Pixel Value')
+        plt.ylabel('Energy')
+        plt.title('Input Image Energy Curve')
+
+        plt.figure(2)
+        plt.plot(E_l_clip[:, 0], 'b')
+        plt.plot(E_l_clip[:, 1], 'g')
+        plt.plot(E_l_clip[:, 2], 'r')
+        plt.xlabel('Pixel Value')
+        plt.ylabel('Energy')
+        plt.title('Clipped Energy Curve')
+
+        plt.figure(3)
+        plt.plot(tf[:, 0], 'b')
+        plt.plot(tf[:, 1], 'g')
+        plt.plot(tf[:, 2], 'r')
+        plt.xlabel('Input Pixel Value')
+        plt.ylabel('Output Pixel Value')
+        plt.title('Transfer Function')
     plt.show()
