@@ -5,6 +5,22 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
+def color_histogram(image,title_):
+    colors = ("b", "g", "r")
+    channel_ids = (0, 1, 2)
+
+    # create the histogram plot, with three lines, one for
+    # each color
+    plt.xlim([0, 256])
+    for channel_id, c in zip(channel_ids, colors):
+        histogram, bin_edges = np.histogram(image[:, :, channel_id], bins=256, range=(0, 256))
+        plt.plot(bin_edges[0:-1], histogram, color=c)
+
+    plt.xlabel("Color value")
+    plt.ylabel("Pixels")
+    plt.title(title_)
+    return
+
 def exposure_threshold(energy_curve):
     et = np.zeros(energy_curve.shape[1])
     for i in range(energy_curve.shape[1]):
@@ -55,6 +71,7 @@ parser.add_argument('--display_graphs', action='store_true', default=False)
 args = parser.parse_args()
 
 img = cv2.imread(args.input_file[0])
+actual_img=img
 img -= np.min(img)
 img = img.astype(np.float32)
 img *= 255 / np.max(img)
@@ -140,4 +157,11 @@ if args.display_graphs:
         plt.xlabel('Input Pixel Value')
         plt.ylabel('Output Pixel Value')
         plt.title('Transfer Function')
+        
+        plt.figure(4)
+        color_histogram(actual_img,'Input Image Histogram')
+        
+        plt.figure(5)
+        color_histogram(new_img,'Enhanced Image Histogram')
+        
     plt.show()
