@@ -5,7 +5,7 @@ from math import ceil
 
 #Reading the input
 
-img = cv2.imread('lena_gray_dark.jpg')
+img = cv2.imread('LDRin.tiff')
 img_yuv = cv2.cvtColor(img, cv2.COLOR_BGR2YUV)
 y, u, v = cv2.split(img_yuv)
 
@@ -61,7 +61,7 @@ for layer in range(255):
 
 #Inter Layer aggregation
     
-alpha = 5.0
+alpha = 2.5
 W = np.power((s/max(s)),alpha)
 d = np.dot(D,W)
 d = d/(np.sum(d))   
@@ -87,4 +87,4 @@ out_image = cv2.cvtColor(out_yuv,cv2.COLOR_YUV2BGR)
 
 
 
-cv2.imwrite('lenaLDRout5.0.jpg', out_image)
+cv2.imwrite('LDRout2.5.jpg', out_image)
