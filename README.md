@@ -17,3 +17,6 @@ To run energy curve equalization on ```lena.jpg```, save to output to ```outputs
 ```shell
 python energy_curve.py lena.jpg -o outputs/lena_equalized.jpg --display_graphs
 ```
+
+
+For LDR.py and cahe_gray.py code can be run directly 
