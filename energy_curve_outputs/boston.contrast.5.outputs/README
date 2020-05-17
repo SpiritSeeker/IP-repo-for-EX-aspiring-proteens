@@ -1,0 +1,14 @@
+From CSIQ Dataset, boston.contrast.5.png image is taken as input and it enhanced using Energy Curve Equalisation method with and without 
+clipping the Energy Curve
+
+Input Image:
+boston.contrast.5.png
+
+OutputImage:
+boston.contrast.5_with_clipping_output.png          Enhanced image obtained by Clipping the energy curve
+boston.contrast.5_without_clipping_output.png       Enhanced image obtained by without Clipping the energy curve
+
+
+Conclusion:
+With the clipping limit overenhancement is controlled and the natural appearance of the image is preserved, 
+whereas without a clipping limit it results in over-enhancement and lacks the natural visual appearance of the image.
