@@ -2,14 +2,14 @@
 From CSIQ dataset,5 contrast degradations of woman image are taken as input and their corresponding enhanced output images are obtained 
 using Exposure-Based Energy Curve Equalization for Enhancement technique.
 
-__Input Images__\
+__Input Images__
 woman.contrast.1.png   contrast level 1 degraded image
 woman.contrast.2.png   contrast level 2 degraded image
 woman.contrast.3.png   contrast level 3 degraded image
 woman.contrast.4.png   contrast level 4 degraded image
 woman.contrast.5.png   contrast level 5 degraded image
 
-__Output Images__\
+__Output Images__
 woman.contrast.1_output.png
 woman.contrast.2_output.png
 woman.contrast.3_output.png
