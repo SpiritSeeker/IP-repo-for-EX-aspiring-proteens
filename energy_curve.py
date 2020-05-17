@@ -59,9 +59,9 @@ def transfer_func(energy_curve, exp_thresh):
             transfer_funcn[j, i] = tf
     return transfer_funcn
 
-neighbourhood_matrix = np.array([[0, 1, 0],
+neighbourhood_matrix = np.array([[1, 1, 1],
                                  [1, 0, 1],
-                                 [0, 1, 0]])
+                                 [1, 1, 1]])
 
 parser = argparse.ArgumentParser(description='Energy Curve Equalization')
 parser.add_argument('input_file', metavar='I', type=str, nargs='+',
