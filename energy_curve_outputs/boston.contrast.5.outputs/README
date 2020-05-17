@@ -11,4 +11,4 @@ boston.contrast.5_without_clipping_output.png       Enhanced image obtained by w
 
 Conclusion:
 With the clipping limit overenhancement is controlled and the natural appearance of the image is preserved, 
-whereas without a clipping limit it results in over-enhancement and lacks the natural visual appearance of the image.
+whereas without a clipping limit it results in over-enhancement and lacks the natural visual appearance of the image
